@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Office Revenue Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Box Office Revenue Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input type="number" name="Rating" placeholder="Enter Rating" required><br>
+        <input type="number" name="Release year" placeholder="Enter the release year" required><br>
+        <input type="number" name="Vote Count" placeholder="Enter the Vote Count" required><br>
+        <input type="number" name="Production Countries" placeholder="Enter the Number of Production Countries" required><br>
+        <!-- Add more fields based on your model input -->
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+</body>
+</html>
