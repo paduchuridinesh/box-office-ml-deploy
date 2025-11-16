@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template
 import pickle
-import numpy as np
+import os
 
-# Load the model
-model = pickle.load(open('Box_Office_Revenue_Prediciton.pkl', 'rb'))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "Box_Office_Revenue_Prediciton.pkl")
+model = pickle.load(open(model_path, 'rb'))
 
 app = Flask(__name__)
 
